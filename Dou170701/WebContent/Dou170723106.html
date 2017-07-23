@@ -1,0 +1,23 @@
+<!-- 106待命(會呼叫104丟資料)=>107發送mesg=>108更新資料庫訊息&發送 -->
+<!-- http://blog.darkthread.net/post-2009-06-03-about-jquery-ajax-cache-option.aspx -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+	$.ajaxSetup({cache: false});
+	function requestMesg(){
+		$.get("Dou170723104",	<!--呼叫104丟資料 https://www.w3schools.com/jquery/ajax_get.asp The $.get() method loads data from the server using a HTTP GET request.-->
+			function(data, status){$("#mesg").html(data);
+			requestMesg();	<!--遞回-->
+			});
+	}
+	requestMesg();	<!--呼叫function requestMesg();-->
+	
+</script>
+
+<h1>Brad Big Company</h1>
+<hr>
+
+<div id="mesg"></div>
+<hr>
+<hr>
+Hello, World

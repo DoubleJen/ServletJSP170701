@@ -1,0 +1,62 @@
+<!-- 
+	101=>100 30秒回來 102馬上回來
+	101=>103 30秒延遲回應
+	101=>105推撥(Server002=>104=>105)
+ -->
+ <!-- https://www.w3schools.com/jquery/jquery_get_started.asp -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- 宣告網頁隨時會過期(每分每秒需更新, 例如有新聞頁面 =>content="-1"-->
+<meta http-equiv="expires" content="-1"/>
+
+<script>
+	$.ajaxSetup({cache: false});
+	function getData(){
+		$.get("Dou170723100", 
+			function(data, status){$("#here").html(data);}
+		);
+	}
+	
+	function getData2(){
+		$.get("Dou170723102", 
+			function(data, status){$("#here2").html(data);}
+		);
+	}
+	
+	function getData3(){
+		$.get("Dou170723103", 
+			function(data, status){$("#here3").html(data);}
+		);
+	}
+	
+	function getData4(){
+		$.get("Dou170723104", 
+			function(data, status){$("#mesg").html(data);}
+		);
+	}
+	<!--呼叫104丟資料-->
+</script>
+
+<h1>Brad Big Company</h1>
+<hr>
+
+<input type="button" onclick="getData()" value="Get Data"/>
+<hr>
+
+<div id="here"></div>
+
+<input type="button" onclick="getData2()" value="Get Data2"/>
+<hr>
+
+<div id="here2"></div>
+
+<input type="button" onclick="getData3()" value="Get Data3"/>
+<hr>
+
+<div id="here3"></div>
+
+<input type="button" onclick="getData4()" value="Get Mesg"/>
+<hr>
+
+<div id="mesg"></div>
+	<!-- google Chrome實驗 -->

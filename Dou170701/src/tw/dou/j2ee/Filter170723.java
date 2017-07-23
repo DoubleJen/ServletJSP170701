@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-			//路徑
-@WebServlet("/Dou170701001")
+			//路徑配合MyFilter170723.java修改
+@WebServlet("/filter/Filter170723")
 /////////////////////////////////
-public class Dou170701001 extends HttpServlet {  
+public class Filter170723 extends HttpServlet {  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 //		System.out.println("doGet");
